@@ -1,0 +1,150 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+        <title>SIGN-UP</title>
+        <style>
+            body{
+                background-color: rgb(205, 248, 205);
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                display: flex;
+            }
+            .container{
+                text-align: center;
+                background-color: beige;
+                border-radius: 24px;
+                padding: 10;
+                margin: 10px;
+                font-size: 27;
+                font-family: 'Times New Roman', Times, serif;
+                width: 650;
+                box-shadow: 5px 5px 15px black;
+            }
+            button{
+                background-color: #017f08;
+                color: white;
+                font-weight: 800;
+                font-size: 17;
+                font-family: 'Times New Roman', Times, serif;
+                padding: 8 20 ;
+                margin-top: 20;
+                border-radius: 12px;
+                border: 0;
+            }
+            .inputbox{
+                position: relative;
+                width: 100%;
+                margin-top: 25px;
+            }
+            .inputbox input{
+                position: relative;
+                font-family: 'Times New Roman', Times, serif;
+                width: 100%;
+                padding: 10px 10px 10px;
+                background: transparent;
+                border: none;
+                outline: none;
+                color: black;
+                font-size: 1em;
+                letter-spacing: 0.06em;
+                z-index: 10;
+            }
+            .inputbox span{
+                position: absolute;
+                left: 0;
+                padding: 20px 10px 10px;
+                font-size: 1em;
+                color: black;
+                pointer-events: none;
+                letter-spacing: 0.05em;
+                transition: 0.5s;
+            }
+            .inputbox input:valid ~ span,
+            .inputbox input:focus ~ span {
+                color: black;
+                transform: translateX(-10px) translateY(-34px);
+                font-size: 0.75em
+            }
+            .inputbox i{
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 3px;
+                background: #017f08;
+                border-radius: 10px;
+                transition: 0.5s;
+                pointer-events: none;
+                z-index: 9;
+            }
+            .inputbox input:valid ~ i,
+            .inputbox input:focus ~ i {
+                height: 40px;
+            }
+            p{
+                font-size: 35;
+            }
+            #msg{
+                font-size: 14px;
+                margin: 15px 0;
+                display: inline-block;
+                color: black;
+                padding: 5px 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <form action="submit.php" method="post">
+            <p>NEW USER SIGN-UP.</p>
+            <div class="inputbox">
+                <input type="text" required="required" name="id", autocomplete="off">
+                <span>User Id: </span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="text" required="required" name="name", autocomplete="off">
+                <span>Full Name: </span>
+                <i></i>
+            </div>
+            <span>Gender: </span>
+            Male <input type="radio" required="required" name="gender" value="Male", autocomplete="off">
+             Female <input type="radio" required="required" name="gender" value="Female" autocomplete="off">    
+            
+            <div class="inputbox">
+                <input type="text" required="required" name="addr", autocomplete="off">
+                <span>Address: </span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="text" required="required" name="num", autocomplete="off">
+                <span>Moble Number: </span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="text" required="required" name="uname", autocomplete="off">
+                <span>Username: </span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="password" required="required" name="pass", autocomplete="off">
+                <span>Password: </span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="password" required="required" name="cpass", autocomplete="off">
+                <span>Confirm Password: </span>
+                <i></i>
+            </div>
+            <p id="msg"></p>
+            <div class="but">
+                <button name="submit" onclick="getgen()">SUBMIT</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script type="text/javascript" src="connect.js"></script>
+    </body>
+</html>
